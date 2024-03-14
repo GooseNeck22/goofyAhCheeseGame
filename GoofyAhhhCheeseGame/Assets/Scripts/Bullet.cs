@@ -1,15 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] float speed = 10f; // Speed at which the bullet moves
+    [SerializeField] public float speed = 10f; // Speed at which the bullet moves
     [SerializeField] Transform target; // Reference to the enemy target
 
+    private Tower xTower;
+    
     public void SetTarget(Transform _target)
     {
-        target = _target;
+        //target = _target;
+        _target = target;
     }
 
     void Update()
@@ -30,8 +34,8 @@ public class Bullet : MonoBehaviour
             HitTarget();
             return;
         }
-
-        transform.Translate(direction.normalized * distanceThisFrame, Space.World);
+        xTower.bulletPrefab.transform.Translate(direction.normalized * distanceThisFrame, Space.World);
+        //transform.Translate(direction.normalized * distanceThisFrame, Space.World);
     }
 
     void HitTarget()
