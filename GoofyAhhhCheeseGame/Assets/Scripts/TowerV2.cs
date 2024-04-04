@@ -29,6 +29,7 @@ public class TowerV2 : MonoBehaviour
         if(Time.time - lastAttackTime > attackRate)
         {
             lastAttackTime = Time.time;
+            
             curEnemy = GetEnemy();
             if(curEnemy != null)
                 Attack();
