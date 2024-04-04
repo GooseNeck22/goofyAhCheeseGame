@@ -9,12 +9,6 @@ public class Bullet : MonoBehaviour
     [SerializeField] Transform target; // Reference to the enemy target
 
     private Tower xTower;
-    
-    public void SetTarget(Transform _target)
-    {
-        //target = _target;
-        _target = target;
-    }
 
     void Update()
     {

@@ -44,6 +44,7 @@ public class Tower : MonoBehaviour
             // Check if the collider belongs to an enemy
             if (col.CompareTag("Enemy"))
             {
+                
                 // Calculate direction towards the enemy
                 Vector2 direction = col.transform.position - firePoint.position;
             
