@@ -13,12 +13,14 @@ public class Projectile : MonoBehaviour
         this.target = target;
         this.damage = damage;
         this.moveSpeed = moveSpeed;
+        Debug.Log("working in initialize: " + moveSpeed);
     }
     void Update ()
     {
         if(target != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
+            Debug.Log("working in debug: " + moveSpeed);
             transform.LookAt(target.transform);
             if(Vector3.Distance(transform.position, target.transform.position) < 0.2f)
             {

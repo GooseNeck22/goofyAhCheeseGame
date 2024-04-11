@@ -1,7 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class TowerV2 : MonoBehaviour
 {
     public enum TowerTargetPriority
@@ -12,7 +20,9 @@ public class TowerV2 : MonoBehaviour
     }
     [Header("Info")]
     public float range;
-    private List<Enemy> curEnemiesInRange = new List<Enemy>();
+    //[SerializeField] private List<Enemy> curEnemiesInRange = new List<Enemy>();
+    [SerializeField]private Collider2D[] enemy;
+    [SerializeField] private LayerMask enemyMask;
     private Enemy curEnemy;
     public TowerTargetPriority targetPriority;
     public bool rotateTowardsTarget;
@@ -25,40 +35,51 @@ public class TowerV2 : MonoBehaviour
     public float projectileSpeed;
     void Update ()
     {
+
+        enemy = Physics2D.OverlapCircleAll(transform.position, range, enemyMask);
+        
+        
         // attack every "attackRate" seconds
         if(Time.time - lastAttackTime > attackRate)
         {
             lastAttackTime = Time.time;
             
             curEnemy = GetEnemy();
-            if(curEnemy != null)
+            if (curEnemy != null)
+            {
                 Attack();
+            }
         }
     }
     // returns the current enemy for the tower to attack
     Enemy GetEnemy ()
     {
-        curEnemiesInRange.RemoveAll(x => x == null);
-        if(curEnemiesInRange.Count == 0)
+        //.RemoveAll(x => x == null);
+        if (enemy.Length == 0)
+        {
             return null;
-        if(curEnemiesInRange.Count == 1)
-            return curEnemiesInRange[0];
+        }
+        if (enemy.Length == 1)
+        {
+            Debug.Log("working in GetEnemy");
+            return enemy[0].gameObject.GetComponent<Enemy>();
+        }
         switch(targetPriority)
         {
             case TowerTargetPriority.First:
             {
-                return curEnemiesInRange[0];
+                return enemy[0].gameObject.GetComponent<Enemy>();
             }
             case TowerTargetPriority.Close:
             {
                 Enemy closest = null;
                 float dist = 99;
-                for(int x = 0; x < curEnemiesInRange.Count; x++)
+                for(int x = 0; x < enemy.Length; x++)
                 {
-                    float d = (transform.position - curEnemiesInRange[x].transform.position).sqrMagnitude;
+                    float d = (transform.position - enemy[x].transform.position).sqrMagnitude;
                     if(d < dist)
                     {
-                        closest = curEnemiesInRange[x];
+                        closest = enemy[x].gameObject.GetComponent<Enemy>();
                         dist = d;
                     }
                 }
@@ -68,12 +89,13 @@ public class TowerV2 : MonoBehaviour
             {
                 Enemy strongest = null;
                 int strongestHealth = 0;
-                foreach(Enemy enemy in curEnemiesInRange)
+                //enemy[0].gameObject
+                foreach(Collider2D enemy in enemy)
                 {
-                    if(enemy.health > strongestHealth)
+                    if(enemy.gameObject.GetComponent<Enemy>().health > strongestHealth)
                     {
-                        strongest = enemy;
-                        strongestHealth = enemy.health;
+                        strongest = enemy.gameObject.GetComponent<Enemy>();
+                        strongestHealth = enemy.gameObject.GetComponent<Enemy>().health;
                     }
                 }
                 return strongest;
@@ -92,18 +114,35 @@ public class TowerV2 : MonoBehaviour
         GameObject proj = Instantiate(projectilePrefab, projectileSpawnPos.position, Quaternion.identity);
         proj.GetComponent<Projectile>().Initialize(curEnemy, projectileDamage, projectileSpeed);
     }
-    private void OnTriggerEnter (Collider other)
+    
+    /*
+    private void OnCollisionEnter (Collision collision)
     {
-        if(other.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("Enemy"))
         {
-            curEnemiesInRange.Add(other.GetComponent<Enemy>());
+            curEnemiesInRange.Add(collision.gameObject.GetComponent<Enemy>());
         }
-    }
+    } 
     private void OnTriggerExit (Collider other)
     {
         if(other.CompareTag("Enemy"))
         {
             curEnemiesInRange.Remove(other.GetComponent<Enemy>());
         }
+    } */
+
+    
+#if UNITY_EDITOR
+    private void OnDrawGizmos()
+    {
+        try
+        {
+            Handles.color = Color.green;
+            Handles.DrawWireDisc(transform.position, Vector3.forward, range);
+        }
+        catch
+        {
+        }
     }
+#endif
 }
