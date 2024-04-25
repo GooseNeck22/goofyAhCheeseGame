@@ -268,7 +268,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 8747045783750739211, guid: 57b15c07c43143c48bd79599dcd50365, type: 3}
   projectileSpawnPos: {fileID: 1565822877}
   projectileDamage: 1
-  projectileSpeed: 2
+  projectileSpeed: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,6 +946,10 @@ PrefabInstance:
     - target: {fileID: 3302245302709528614, guid: 48a0e4d5032b5bd4483665c59d78f338, type: 3}
       propertyPath: m_Name
       value: ProjectileSpawnPos
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302245302709528614, guid: 48a0e4d5032b5bd4483665c59d78f338, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

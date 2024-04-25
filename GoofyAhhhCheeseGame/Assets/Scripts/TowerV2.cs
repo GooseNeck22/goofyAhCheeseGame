@@ -106,11 +106,7 @@ public class TowerV2 : MonoBehaviour
     // attacks the curEnemy
     void Attack ()
     {
-        if(rotateTowardsTarget)
-        {
-            transform.LookAt(curEnemy.transform);
-            transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        }
+        
         GameObject proj = Instantiate(projectilePrefab, projectileSpawnPos.position, Quaternion.identity);
         proj.GetComponent<Projectile>().Initialize(curEnemy, projectileDamage, projectileSpeed);
     }
