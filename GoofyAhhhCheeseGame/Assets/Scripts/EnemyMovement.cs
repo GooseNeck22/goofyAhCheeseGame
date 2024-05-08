@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public Transform[] movePoints; // Array to store movement points
+    [SerializeField]public Transform[] movePoints; // Array to store movement points
     public float moveSpeed = 5f; // Speed of movement
     private int currentPointIndex = 0; // Index of the current movement point
 
