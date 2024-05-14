@@ -47,8 +47,11 @@ public class TowerPlacement : MonoBehaviour
         } */
         if (gm.CanAfford(towerCosts[towerIndex]))
         {
-            gm.SpendCurrency(towerCosts[towerIndex]);
+            Debug.Log("ben");
             Instantiate(towers[towerIndex], transform.position, Quaternion.identity);
+            Debug.Log("herbert");
+            gm.SpendCurrency(towerCosts[towerIndex]);
+            Debug.Log("da");
         }
         else
         {
