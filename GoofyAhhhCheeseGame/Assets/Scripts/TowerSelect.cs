@@ -13,6 +13,8 @@ public class TowerPlacement : MonoBehaviour
     {
         money = 150; // Starting amount of money (you can change this to whatever you want)
         UpdateMoneyText();
+        Debug.Log("Money: " + money);
+        Debug.Log("Tower Cost: " + towerCosts[0]);
     }
 
     private void UpdateMoneyText()
