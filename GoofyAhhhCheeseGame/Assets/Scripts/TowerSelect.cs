@@ -9,14 +9,15 @@ public class TowerPlacement : MonoBehaviour
     public GameObject[] towers; // Array holding references to each tower GameObject
     //private int money; // Current money
 
-    [SerializeField] private GameManager gm;
+    // **[SerializeField] private GameManager gm;
     
     private void Start()
     {
         //money = 150; // Starting amount of money (you can change this to whatever you want)
         //UpdateMoneyText();
         //Debug.Log("Money: " + money);
-        Debug.Log("Tower Cost: " + towerCosts[0]);
+        // **Debug.Log("Tower Cost: " + towerCosts[0]);
+        // **Debug.Log(gm.GetCurrency());
     }
 
     /*
@@ -45,17 +46,34 @@ public class TowerPlacement : MonoBehaviour
             money -= towerCosts[towerIndex];
             UpdateMoneyText();
         } */
-        if (gm.CanAfford(towerCosts[towerIndex]))
+        
+        
+        
+        if (GameManager.instance == null)
+        {
+            Debug.Log("nigga");
+        }
+        else
+        {
+            Debug.Log("we good");
+        }
+        
+        Debug.Log("Tower Cost: " + towerCosts[towerIndex]);
+        Debug.Log(GameManager.instance.GetCurrency());
+        
+        if (GameManager.instance.CanAfford(towerCosts[towerIndex]))
         {
             Debug.Log("ben");
             Instantiate(towers[towerIndex], transform.position, Quaternion.identity);
             Debug.Log("herbert");
-            gm.SpendCurrency(towerCosts[towerIndex]);
+            GameManager.instance.SpendCurrency(towerCosts[towerIndex]);
             Debug.Log("da");
         }
         else
         {
             Debug.Log("Not enough money to buy this tower!");
         }
+        
+        Debug.Log(GameManager.instance.GetCurrency());
     }
 }

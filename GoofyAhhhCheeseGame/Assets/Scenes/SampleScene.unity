@@ -587,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &490180069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,10 +1984,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1636533161259970125, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3653874207989085270, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
       propertyPath: m_Name
       value: Tower
@@ -1996,18 +1992,6 @@ PrefabInstance:
       propertyPath: towerSelectionWindow
       value: 
       objectReference: {fileID: 985632936}
-    - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
-      propertyPath: upgradeCosts.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
-      propertyPath: upgradeCosts.Array.data[0]
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
-      propertyPath: upgradeCosts.Array.data[1]
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4416058802067550892, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.5
@@ -2142,10 +2126,6 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 154462693}
-    - target: {fileID: 712060466641786157, guid: edd509bcfd52ef249855454e03378b6f, type: 3}
-      propertyPath: moneyText
-      value: 
-      objectReference: {fileID: 410082260}
     - target: {fileID: 712060466641786157, guid: edd509bcfd52ef249855454e03378b6f, type: 3}
       propertyPath: towerSelectionWindow
       value: 

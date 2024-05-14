@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b348dddb11b6241b230f9c7674317c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  maxLevel: 3
+  upgradeCosts: 3200000064000000
+  towerSelectionWindow: {fileID: 0}
   range: 5
   enemy: []
   enemyMask:
@@ -118,7 +122,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3653874207989085270}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:

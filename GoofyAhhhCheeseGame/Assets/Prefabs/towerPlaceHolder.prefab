@@ -131,10 +131,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerSelectionWindow: {fileID: 0}
-  moneyText: {fileID: 0}
   towerCosts: 64000000
   towers:
   - {fileID: 3653874207989085270, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
+  gm: {fileID: 0}
 --- !u!61 &8411362327443103666
 BoxCollider2D:
   m_ObjectHideFlags: 0

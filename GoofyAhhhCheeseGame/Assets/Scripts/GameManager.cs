@@ -19,8 +19,11 @@ public class GameManager : MonoBehaviour
         else if (instance != this)
         {
             Destroy(gameObject);
+            Debug.Log("boom");
         }
-
+        
+        Debug.Log(instance);
+        
         // Initialize current currency
         currentCurrency = startingCurrency;
     }
@@ -33,6 +36,11 @@ public class GameManager : MonoBehaviour
     public void AddCurrency(int amount)
     {
         currentCurrency += amount;
+    }
+
+    public int GetCurrency()
+    {
+        return currentCurrency;
     }
 
     public void SpendCurrency(int amount)
