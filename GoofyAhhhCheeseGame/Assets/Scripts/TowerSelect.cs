@@ -11,7 +11,7 @@ public class TowerPlacement : MonoBehaviour
 
     private void Start()
     {
-        money = 100; // Starting amount of money (you can change this to whatever you want)
+        money = 150; // Starting amount of money (you can change this to whatever you want)
         UpdateMoneyText();
     }
 

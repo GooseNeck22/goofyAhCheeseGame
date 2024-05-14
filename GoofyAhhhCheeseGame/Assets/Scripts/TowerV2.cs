@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -18,6 +19,13 @@ public class TowerV2 : MonoBehaviour
         Close,
         Strong
     }
+    
+    public int level = 1;
+    public int maxLevel = 3;
+    public int[] upgradeCosts; // Array to hold upgrade costs for each level
+    
+    public GameObject towerSelectionWindow; // Reference to the tower selection window GameObject
+    
     [Header("Info")]
     public float range;
     //[SerializeField] private List<Enemy> curEnemiesInRange = new List<Enemy>();
@@ -33,6 +41,61 @@ public class TowerV2 : MonoBehaviour
     public Transform projectileSpawnPos;
     public int projectileDamage;
     public float projectileSpeed;
+    
+    
+    
+    void Start()
+    {
+        // Initialize upgrade costs if not already set
+        if (upgradeCosts.Length == 0)
+        {
+            upgradeCosts = new int[maxLevel];
+            // Initialize upgrade costs here, for example:
+            upgradeCosts[0] = 50;
+            upgradeCosts[1] = 100;
+        }
+    }
+    
+    
+    private void OnMouseDown()
+    {
+        if (towerSelectionWindow != null)
+        {
+            towerSelectionWindow.SetActive(true); // Open tower selection window
+        }
+    }
+    
+    public void UpgradeTower()
+    {
+        if (level < maxLevel)
+        {
+            // Check if player has enough currency to upgrade
+            int upgradeCost = upgradeCosts[level - 1]; // Cost for the next level
+            if (GameManager.instance.CanAfford(upgradeCost))
+            {
+                // Deduct cost from player's currency
+                GameManager.instance.SpendCurrency(upgradeCost);
+
+                // Upgrade the tower
+                level++;
+
+                // TODO: Implement tower upgrade visuals or functionality here
+
+                Debug.Log("Tower upgraded to level " + level);
+            }
+            else
+            {
+                Debug.Log("Not enough currency to upgrade tower");
+            }
+        }
+        else
+        {
+            Debug.Log("Tower is already at max level");
+        }
+    }
+
+    
+    
     void Update ()
     {
 
