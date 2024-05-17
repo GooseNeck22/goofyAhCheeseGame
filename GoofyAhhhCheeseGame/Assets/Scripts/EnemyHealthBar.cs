@@ -14,6 +14,7 @@ public class EnemyHealthBar : MonoBehaviour
     void Start()
     {
         //target = GetComponent<Enemy>().transform;
+        //healthSlider.maxValue = _enemy.health;
     }
     
     void Update()
@@ -26,6 +27,9 @@ public class EnemyHealthBar : MonoBehaviour
             // Position the health bar above the enemy
             transform.position = Camera.main.WorldToScreenPoint(target.position + offset);
         }
+        
+        SetHealth(_enemy.health);
+        
     }
 
     public void SetMaxHealth(int health)
