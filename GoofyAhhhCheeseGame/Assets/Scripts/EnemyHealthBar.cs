@@ -8,17 +8,20 @@ public class EnemyHealthBar : MonoBehaviour
     public Slider healthSlider;
     public Vector3 offset; // Offset to position the health bar above the enemy
 
+    public Enemy _enemy;
     private Transform target;
 
     void Start()
     {
-        //target = GetComponentInParent<Enemy>().transform;
+        //target = GetComponent<Enemy>().transform;
     }
-
+    
     void Update()
     {
-        target = GetComponentInParent<Enemy>().transform;
-        if (target != null)
+        //target = GetComponent<Enemy>().transform;
+        target = _enemy.transform;
+        
+        if (_enemy != null)
         {
             // Position the health bar above the enemy
             transform.position = Camera.main.WorldToScreenPoint(target.position + offset);
