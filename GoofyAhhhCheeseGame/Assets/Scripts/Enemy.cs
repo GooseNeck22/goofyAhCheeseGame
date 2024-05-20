@@ -20,10 +20,12 @@ public class Enemy : MonoBehaviour
     
     public void TakeDamage(int damage)
     {
-        health =- damage;
+        health = health - damage;
+        Debug.Log(" hp: " + health);
         if (health <= 0)
         {
-            Destroy(this.gameObject);
+            Debug.Log("Penis");
+            //Destroy(this.gameObject);
         }
     }
 }

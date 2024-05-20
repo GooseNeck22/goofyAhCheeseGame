@@ -20,18 +20,17 @@ public class Projectile : MonoBehaviour
         if(target != null)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, moveSpeed * Time.deltaTime);
-            Debug.Log("working in debug: " + moveSpeed);
             if(Vector3.Distance(transform.position, target.transform.position) < 0.2f)
             {
                 target.TakeDamage(damage);
                 //if(hitSpawnPrefab != null)
                     //Instantiate(hitSpawnPrefab, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                Destroy(this.gameObject);
             }
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
