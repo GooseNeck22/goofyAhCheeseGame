@@ -2201,6 +2201,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 631773831}
     m_Modifications:
+    - target: {fileID: 568609083618000804, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -9.5322
+      objectReference: {fileID: 0}
+    - target: {fileID: 568609083618000804, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.23390198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250586393777086778, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250586393777086778, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250586393777086778, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250586393777086778, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4712365186292829453, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2217,6 +2241,22 @@ PrefabInstance:
       propertyPath: _enemy
       value: 
       objectReference: {fileID: 211474020}
+    - target: {fileID: 5063627034796332052, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063627034796332052, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_MaxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063627034796332052, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5063627034796332052, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6320857853303833372, guid: 1c133a7b7d7b9df408d37614ccb70a5d, type: 3}
       propertyPath: m_Name
       value: GameObject
@@ -2325,6 +2365,10 @@ PrefabInstance:
     - target: {fileID: 3653874207989085270, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
+      propertyPath: projectileDamage
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
       propertyPath: towerSelectionWindow

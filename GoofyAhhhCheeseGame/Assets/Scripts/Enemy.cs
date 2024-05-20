@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Penis");
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
