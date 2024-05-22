@@ -14,7 +14,7 @@ public class mesto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(basehp);
     }
 
     public int GetBaseHp() {
