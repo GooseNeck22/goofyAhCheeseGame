@@ -2521,7 +2521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
       propertyPath: range
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3841669408937865645, guid: 43cf4ef2c18ecd34c87b71b8ff8af4a1, type: 3}
       propertyPath: projectileDamage
@@ -2598,7 +2598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5452598736851759289, guid: 237b20ce2bb291b429de293fd7105ded, type: 3}
       propertyPath: moveSpeed
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5452598736851759289, guid: 237b20ce2bb291b429de293fd7105ded, type: 3}
       propertyPath: movePoints.Array.data[0]

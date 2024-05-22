@@ -35,6 +35,7 @@ public class EnemyHealthBar : MonoBehaviour
         else
         {
             healthSlider.gameObject.SetActive(false);
+            //healthSlider.enabled = false;
         }
     }
 
