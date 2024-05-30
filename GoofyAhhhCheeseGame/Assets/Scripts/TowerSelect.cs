@@ -25,12 +25,17 @@ public class TowerPlacement : MonoBehaviour
     {
         moneyText.text = "Money: " + money.ToString();
     } */
-
+    bool bomboclat = false;
     private void OnMouseDown()
     {
-        if (towerSelectionWindow != null)
+        if (towerSelectionWindow != null && bomboclat == false)
         {
             towerSelectionWindow.SetActive(true); // Open tower selection window
+            bomboclat = true;
+        }
+        else if(bomboclat == true) {
+            towerSelectionWindow.SetActive(false);
+            bomboclat = false;
         }
     }
 
