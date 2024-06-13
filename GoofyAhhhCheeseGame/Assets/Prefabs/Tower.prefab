@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 066d0f0f7a50df54e81359bf8a8524ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,10 +110,10 @@ MonoBehaviour:
     m_Bits: 8
   targetPriority: 0
   rotateTowardsTarget: 1
-  attackRate: 1
+  attackRate: 1.5
   projectilePrefab: {fileID: 8747045783750739211, guid: 57b15c07c43143c48bd79599dcd50365, type: 3}
   projectileSpawnPos: {fileID: 8498516798488731678}
-  projectileDamage: 1
+  projectileDamage: 50
   projectileSpeed: 5
 --- !u!58 &1636533161259970125
 CircleCollider2D:

@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
         GameObject healthBarGO = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
         healthBarGO.transform.SetParent(GameObject.Find("Canvas").transform, false); // Ensure it's part of the UI canvas
         healthBar = healthBarGO.GetComponent<EnemyHealthBar>();
+        Debug.Log("healthbar funguje"); 
 
         if (healthBar != null)
         {
@@ -41,6 +42,7 @@ public class Enemy : MonoBehaviour
         {
             Debug.LogError("Failed to get EnemyHealthBar component from healthBarGO.");
         }
+        
     }
 
     void OnTriggerEnter2D(Collider2D BaseTrigger)
