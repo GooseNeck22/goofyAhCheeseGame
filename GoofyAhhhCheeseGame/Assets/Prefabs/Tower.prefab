@@ -110,7 +110,7 @@ MonoBehaviour:
     m_Bits: 8
   targetPriority: 0
   rotateTowardsTarget: 1
-  attackRate: 1.5
+  attackRate: 1
   projectilePrefab: {fileID: 8747045783750739211, guid: 57b15c07c43143c48bd79599dcd50365, type: 3}
   projectileSpawnPos: {fileID: 8498516798488731678}
   projectileDamage: 50

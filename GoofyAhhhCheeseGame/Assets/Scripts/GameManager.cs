@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public int startingCurrency = 100;
+    public int startingCurrency = 1000;
     private int currentCurrency;
 
     void Awake()
